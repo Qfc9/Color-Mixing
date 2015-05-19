@@ -1,0 +1,54 @@
+<html>
+<head>
+
+<script>
+
+function colorfy(happy,sad,Surprised,disgust,angry,fear){
+
+	total = happy+sad+Surprised+disgust+angry+fear;
+	happy = [happy*58,happy*216,happy*255];
+	sad = [sad*58,sad*161,sad*255];
+	Surprised = [Surprised*255,Surprised*121,Surprised*180];
+	disgust = [disgust*0,disgust*224,disgust*143];
+	angry = [angry*255,angry*79,angry*79];
+	fear = [fear*255,fear*89,fear*255];
+	
+	red = Math.round(((happy[0]+sad[0]+Surprised[0]+disgust[0]+angry[0]+fear[0])+1)/(total+.01));
+	green = Math.round(((happy[1]+sad[1]+Surprised[1]+disgust[1]+angry[1]+fear[1])+1)/(total+.01));
+	blue = Math.round(((happy[2]+sad[2]+Surprised[2]+disgust[2]+angry[2]+fear[2])+1)/(total+.01));
+	
+	document.body.style.backgroundColor = "rgb("+red+","+green+","+blue+")";
+	
+	
+}
+
+</script>
+
+</head>
+<body>
+
+<button type="button" onclick="colorfy(2,3,1,2,2,3)">Color Mix</button>
+
+<br><br>
+
+<div id="happy" style="height:100px;width:100px;background:rgb(58,216,255)">
+	Happy
+</div>
+<div id="sad" style="height:100px;width:100px;background:rgb(25,161,255)">
+	Sad
+</div>
+<div id="surprised" style="height:100px;width:100px;background:rgb(255,121,180);">
+	Surprised
+</div>
+<div id="disgust" style="height:100px;width:100px;background:rgb(0,224,143)">
+	Disgust
+</div>
+<div id="angry" style="height:100px;width:100px;background:rgb(255,79,79)">
+	Angry
+</div>
+<div id="fear" style="height:100px;width:100px;background:rgb(255,89,255)">
+	Fear
+</div>
+
+</body>
+</html>
